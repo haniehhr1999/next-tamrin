@@ -26,37 +26,41 @@ const Layout = ({ children }) => {
     {
       title: "contact",
       path: "/contacts",
-    }
+    },
   ];
   return (
     <>
-      <header
-        className={
-          router.pathname === "/tamrin1/view1/[id]"
-            ? "bg-red-800 py-3 px-6 flex justify-between items-center"
-            : "bg-blue-900 py-3 px-6 flex justify-between items-center"
-        }
-      >
-        <nav>
-          <ul className="flex ">
-            {ROUTES.map((route) => (
-              <li>
-                <Link
-                  className={
-                    route.path === path
-                      ? "px-3 text-amber-400 font-bold"
-                      : "text-white px-3"
-                  }
-                  href={route.path}
-                >
-                  {route.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <h1 className="text-orange-300 font-bold text-3xl">HANA SHOP</h1>
-      </header>
+      {path === "/" ? (
+        <></>
+      ) : (
+        <header
+          className={
+            router.pathname === "/tamrin1/view1/[id]"
+              ? "bg-red-800 py-3 px-6 flex justify-between items-center"
+              : "bg-blue-900 py-3 px-6 flex justify-between items-center"
+          }
+        >
+          <nav>
+            <ul className="flex ">
+              {ROUTES.map((route) => (
+                <li>
+                  <Link
+                    className={
+                      route.path === path
+                        ? "px-3 text-amber-400 font-bold"
+                        : "text-white px-3"
+                    }
+                    href={route.path}
+                  >
+                    {route.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <h1 className="text-orange-300 font-bold text-3xl">HANA SHOP</h1>
+        </header>
+      )}
 
       {children}
     </>

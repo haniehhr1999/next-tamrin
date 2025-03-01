@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 
 const index = () => {
@@ -15,12 +16,13 @@ const index = () => {
         {products.map((product) => (
           <div key={product.id} className="border border-blue-400 rounded p-5">
             <img src={product.image} alt="" />
-            <h3>{product.title}</h3>
+            <Link href={`/tamrin1/view1/${product.id}`} className='text-blue-400 font-bold'>{product.title}</Link>
             <p className="whitespace-break-spaces">{product.description}</p>
             <h3>price : {product.price} $</h3>
           </div>
         ))}
       </div>
+
     </div>
   );
 };

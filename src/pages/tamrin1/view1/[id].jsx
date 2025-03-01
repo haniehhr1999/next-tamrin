@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 
 const SingleProduct = () => {
   const router = useRouter();
-  console.log("router =>", router.query.id);
+  console.log("router =>", router);
 
   const id = router.query.id
 
@@ -19,6 +19,10 @@ const SingleProduct = () => {
         });
     }
   }, [id]);
+
+  const goBack = ()=>{
+    router.back()
+  }
 
   return <div className="md:px-16 md:py-10">
     <div className="grid grid-cols-5 gap-8 border border-red-700 rounded-lg p-8">
@@ -40,6 +44,8 @@ const SingleProduct = () => {
         </h5>
     </div>
   </div>
+
+  <button className="bg-red-700 text-white rounded px-4 py-2 my-3 cursor-pointer" onClick={goBack}>go back</button>
   </div>;
 };
 
