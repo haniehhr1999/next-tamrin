@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
   ];
   return (
     <>
-      {path === "/" ? (
+      {path !== "/tamrin1" && path !== "/tamrin1/view1" && router.pathname !== "/tamrin1/view1/[id]" ? (
         <></>
       ) : (
         <header
